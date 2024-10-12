@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Виртуальные окружения
+venv/
+.env
+
+# База данных (если используете SQLite, например)
+*.db
+
+# Настройки IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Логи
+*.log
+
+# Директории, создаваемые системами сборки
+build/
+dist/
+*.egg-info/
+
+# Системные файлы
+Thumbs.db  # Windows
