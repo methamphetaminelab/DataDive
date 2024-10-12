@@ -1,17 +1,62 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #000000;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
     padding: 10px;
 }
 
 footer {
     margin-top: 20px;
     text-align: center;
+}
+
+.main-content {
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+}
+
+
+.custom-button {
+    background-color: #3498db; /* Синий цвет кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границы */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер текста */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Изменяем курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение фона при наведении */
+}
+
+/* Состояние при наведении */
+.custom-button:hover {
+    background-color: #2980b9; /* Изменение цвета кнопки при наведении */
+}
+
+/* Состояние нажатия */
+.custom-button:active {
+    background-color: #1c5d86; /* Темнее при нажатии */
+}
+
+/* Неактивное состояние */
+.custom-button:disabled {
+    background-color: #bdc3c7; /* Серый цвет для неактивной кнопки */
+    cursor: not-allowed; /* Изменяем курсор для неактивного состояния */
+}
+
+.container {
+    position: relative; /* Контекст для абсолютного позиционирования */
+}
+
+.positioned-image {
+    position: absolute; /* Позволяет позиционировать изображение по координатам */
+    top: -195px; /* Расстояние от верхней границы контейнера */
+    left: 150px; /* Расстояние от левой границы контейнера */
+    width: 106px;
+    height: 50px; /* Сохраняет пропорции изображения */
 }
