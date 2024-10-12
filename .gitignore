@@ -28,3 +28,7 @@ dist/
 
 # Системные файлы
 Thumbs.db  # Windows
+
+# Frontend
+
+test/
