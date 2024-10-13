@@ -14,7 +14,7 @@ def main():
         else:
             raise ValueError(RESPONSE_CODES[3])
 
-        print(data)
+        print(f'\ndata\n')
 
         results = sortData(data)
 
