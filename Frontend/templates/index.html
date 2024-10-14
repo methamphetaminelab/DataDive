@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDive</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function fetchPlot() {
+            // Создаем новый элемент изображения
+            const img = document.createElement('img');
+            img.src = '/plot?' + new Date().getTime();  // Добавление временной метки для обновления кэша
+            img.alt = "График будет здесь";
+            img.width = 500;  // Установка ширины изображения
+
+            // Находим элемент, куда будем добавлять график
+            const graphContainer = document.getElementById('graphContainer');
+            graphContainer.innerHTML = '';  // Очищаем контейнер перед добавлением нового графика
+            graphContainer.appendChild(img);  // Добавляем график в контейнер
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-text">DataDive</span>
+            <div class="logo-squares">
+                <span class="green"></span>
+                <span class="red"></span>
+                <span class="purple"></span>
+            </div>
+        </div>
+        <nav>
+            <a href="#">ГЛАВНАЯ</a>
+            <a href="#">О НАС</a>
+            <a href="https://github.com/methamphetaminelab/DataDive" target="_blank">GITHUB</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Начни работу <br> с данными <br>уже сейчас</h1>
+        <button onclick="fetchPlot()">Начать</button>
+        <br><br>
+        <div id="graphContainer"></div>  <!-- Контейнер для графика -->
+    </main>
+
+    <script>
+        document.getElementById('plot-btn').addEventListener('click', function() {
+            fetch('/plot')
+                .then(response => response.blob())
+                .then(blob => {
+                    const imgElement = document.getElementById('plot-img');
+                    imgElement.src = URL.createObjectURL(blob);
+                    imgElement.style.display = 'block';
+                })
+                .catch(error => console.error('Ошибка:', error));
+        });
+    </script>
+
+</body>
+</html>
