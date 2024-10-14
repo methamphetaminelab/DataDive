@@ -43,19 +43,5 @@
         <br><br>
         <div id="graphContainer"></div>  <!-- Контейнер для графика -->
     </main>
-
-    <script>
-        document.getElementById('plot-btn').addEventListener('click', function() {
-            fetch('/plot')
-                .then(response => response.blob())
-                .then(blob => {
-                    const imgElement = document.getElementById('plot-img');
-                    imgElement.src = URL.createObjectURL(blob);
-                    imgElement.style.display = 'block';
-                })
-                .catch(error => console.error('Ошибка:', error));
-        });
-    </script>
-
 </body>
 </html>
