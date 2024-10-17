@@ -83,3 +83,9 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
+
+.logo-squares {
+    width: 25px;
+    height: 25px;
+    margin-top: -5px;
+}

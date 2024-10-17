@@ -25,9 +25,7 @@
         <div class="logo">
             <span class="logo-text">DataDive</span>
             <div class="logo-squares">
-                <span class="green"></span>
-                <span class="red"></span>
-                <span class="purple"></span>
+                <img src="{{ url_for('static', filename='images/Group 1.png') }}" alt="Логотип" class="logo">
             </div>
         </div>
         <nav>
@@ -42,6 +40,12 @@
         <button onclick="fetchPlot()">Начать</button>
         <br><br>
         <div id="graphContainer"></div>  <!-- Контейнер для графика -->
+        <fieldset>
+            <label for="data">Загрузите файл<input type="file" name="data"></label>
+            <label for="column">По каким столбцам делать график?
+                <input type="number" name="column" id="column">
+            </label>
+        </fieldset>
     </main>
 </body>
 </html>
