@@ -1,7 +1,7 @@
 from codes import RESPONSE_CODES
 
 def chooseData(dataFile):
-    columns = list(map(int, input('Enter columns (1,2|6,7): ').split(',')))
+    columns = list(map(int, input('Enter columns (1,2): ').split(',')))
     lines = input('Enter lines (1,2,3,4|all): ').split(',')
 
     columnsHead, columnsTail = min(columns) - 1, max(columns)

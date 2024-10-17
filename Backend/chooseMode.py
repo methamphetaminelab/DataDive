@@ -2,7 +2,7 @@ from codes import RESPONSE_CODES
 import os
 
 def chooseMode():
-    mode = int(input('Choose mode:\n[1] xlsx\n[2] csv\n[3] text\n'))
+    mode = int(input('Choose mode:\n[1] xlsx\n[2] csv\n'))
 
     dataFile = None
     if mode in [1, 2]:
@@ -19,9 +19,6 @@ def chooseMode():
             raise ValueError(f"{RESPONSE_CODES[1]}: Expected '.csv' file but got '{os.path.splitext(dataFile)[1].lower()}'")
         elif not os.path.exists(dataFile):
             raise FileNotFoundError(f"{RESPONSE_CODES[99]}: File not found at '{dataFile}'")
-
-    elif mode == 3:
-        pass
     else:
         raise ValueError(RESPONSE_CODES[3])
     
